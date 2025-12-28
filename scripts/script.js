@@ -38,6 +38,21 @@ function addIngredField() {
 
     // appending to the ingreds
     ingreds.append(ingred);
+
+    // adding the events >> ingredName
+
+    ingredName.addEventListener("input", (e) => {
+        const value = e.target.value;
+        console.log(`You entered the value: ${value}`);
+        localStorage.setItem("ingredName", value)
+    });
+
+    // adding the events >> ingredQuant
+    ingredQuant.addEventListener("input", (e) => {
+        const value = e.target.value;
+        console.log(`the quantity is: ${value}`);
+        localStorage.setItem("quantity", value);
+    });
 };
 
 // events
