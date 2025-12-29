@@ -9,18 +9,47 @@
 </head>
 
 <body>
+    <div class="overlay">
+        <div class="modal">
+            <i class="fa-solid fa-xmark crossModalBtn"></i>
+            <h2 class="title-2">New Ingred.</h2>
+            <div class="input-fields">
+                <input class="modalNameField" type="text" placeholder="Enter Name">
+                <input class="modalQuantField" type="number" min="0.0" step="0.01" placeholder="Enter Quantity">
+                <input class="modalUnitField" type="text" placeholder="Enter Unit">
+            </div><!--./input-fields-->
+            <div class="buttons">
+                <button class="btn addIngredBtn">Confirm</button>
+                <button class="btn closeModalBtn">Close</button>
+            </div><!--./buttons-->
+        </div><!--./modal-->
+    </div><!--./overlay-->
+
     <div class="container">
         <h1 class="title-1">The Recipe</h1>
         <div class="ingreds">
+            <div class="ingred">
+                <span class="ingredUnit">Unit</span>
+                <span class="ingredQuant">Quantity</span>
+                <span class="ingredName">Name</span>
+            </div><!--./ingred-->
+            <div class="ingred">
+                <span class="ingredUnit">Unit</span>
+                <span class="ingredQuant">Quantity</span>
+                <span class="ingredName">Name</span>
+            </div><!--./ingred-->
+            <div class="ingred">
+                <span class="ingredUnit">Unit</span>
+                <span class="ingredQuant">Quantity</span>
+                <span class="ingredName">Name</span>
+            </div><!--./ingred-->
         </div><!--./ingreds-->
         <div class="buttons">
-            <button class="btn createBtn">Add ingred.</button>
-            <button class="btn savBtn">save</button>
-            <button class="btn exportBtn">export</button>
-            <button class="btn removeBtn">Remove all ingreds</button>
-        </div><!--buttons-->
-    </div><!--container-->
-    </div>
+            <button class="btn addBtn">Add Ingredient</button>
+            <button class="btn exportBtn">Export to Excel</button>
+            <button class="btn clearBtn">Clear All Ingredients</button>
+        </div><!--./buttons-->
+    </div><!--./container-->
     <script src="scripts/script.js"></script>
 </body>
 

@@ -1,4 +1,7 @@
-/* universal */
+/* imports */
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+/* global */
 * {
     padding: 0;
     margin: 0;
@@ -10,115 +13,150 @@ html {
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-
     font-size: 1.6rem;
 }
 
-input {
-    outline: none;
-}
-
-button {
-    background: none;
-    border: none;
-    outline: 0;
-    transition: all 0.1s linear;
-}
-
-button:hover {
-    opacity: 0.7;
-}
-
 /* classes */
-.title-1 {
-    margin-bottom: 2.4rem;
-    font-size: 3.2rem;
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 380px;
+    margin: 3rem auto 0;
+
+    text-align: center;
 }
 
 .btn {
-    border: 1px solid #000;
-    padding: 1px 2px;
+    width: 100%;
+    height: 5.7rem;
+    padding: 1.5rem;
+    margin-bottom: 1.6rem;
+
+    outline: none;
+    border: none;
+
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
+.btn:hover {
+    opacity: 0.7;
+}
 
+.overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+
+    background-color: rgba(0, 0, 0, 0.9);
+
+
+    z-index: 1;
+}
+
+.overlay .modal {
+    width: 380px;
+
+    margin: 5rem auto 0;
+    padding: 3rem 1.5rem;
+    border-radius: 10px;
+
+    background-color: #fff;
+    z-index: 2;
+    opacity: 1;
+}
+
+.overlay .modal .crossModalBtn {
+    cursor: pointer;
+}
+
+.overlay .modal .crossModalBtn:hover {
+    opacity: 0.7;
+}
+
+.overlay .modal .title-2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.overlay .modal .input-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.overlay .modal .input-fields input {
+    margin-bottom: 1.6rem;
+    padding: 1rem;
+    outline: none;
+}
+
+
+.overlay .modal .buttons .addIngredBtn {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.overlay .modal .buttons .closeModalBtn {
+    background-color: #C81F1F;
+    color: #fff;
+}
 
 /* sections */
-.container {
-    max-width: 500px;
-
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-
-    padding: 10px 0;
+.container .buttons {
+    width: 100%;
 }
 
-
-
-/* .buttons .btn {
-    padding: 5px;
-    margin-bottom: 2.4rem;
-
-    background: green;
-    color: #fff;
-
-    font-size: 19px;
-} */
-
-.container .buttons .btn {
-    display: inline-block;
-    width: 90%;
-
-    padding: 5px;
-
-    background: #4CAF50;
-    color: #fff;
-
-    text-transform: capitalize;
-    font-size: 20px;
-}
-
-.container .buttons .btn:hover {
-    opacity: 0.8;
+.container .buttons .btn:last-child {
+    margin-bottom: 0;
 }
 
 @media screen and (max-width: 430px) {
     .container {
-        width: 90%;
-        margin: auto;
-
+        height: 90%;
     }
 
     .container .ingreds .ingred {
-
-
-        margin-bottom: 3.8rem;
         width: 100%;
+        max-width: 370px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0.5rem 1rem;
+        border: 1px solid #333;
+        margin-bottom: 1rem;
     }
 
-    .container .ingreds .ingred .ingredName,
-    .container .ingreds .ingred .ingredQuant {
-        padding: 0.4rem 0.8rem;
-        font-size: 2.4rem;
-        width: 100%;
-        flex: 1;
+    .container .ingreds .ingred span[class^="ingred"] {
+        font-size: 1.6rem;
     }
 
-    .container .ingreds .ingred .ingredName {
-        margin-bottom: 1.6rem;
+    .container .buttons {
+        position: absolute;
+        bottom: 0;
     }
 
-    .container .buttons .btn {
-        width: 100%;
-        height: 5.6rem;
-
-        margin-bottom: 2rem;
+    .container .buttons .addBtn {
+        background-color: #4CAF50;
+        color: #fff;
     }
 
+    .container .buttons .exportBtn {
+        background-color: #008FFC;
+        color: #fff;
+    }
+
+    .container .buttons .clearBtn {
+        background-color: #C81F1F;
+        color: #fff;
+    }
 }
