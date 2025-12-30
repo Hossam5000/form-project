@@ -6,6 +6,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 html {
@@ -98,6 +99,11 @@ body {
     outline: none;
 }
 
+.overlay .modal .errorMsg {
+    display: none;
+    color: red;
+    text-align: center;
+}
 
 .overlay .modal .buttons .addIngredBtn {
     background-color: #4CAF50;

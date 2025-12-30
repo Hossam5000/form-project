@@ -11,6 +11,8 @@ const modalNameField = overlay.querySelector('.modalNameField');
 const modalQuantField = overlay.querySelector('.modalQuantField');
 const modalUnitField = overlay.querySelector('.modalUnitField');
 
+const errMsg = overlay.querySelector('.errorMsg');
+
 // >> Local Storage
 let ingredientsData = [];
 
@@ -26,18 +28,38 @@ function closeModal() {
 };
 
 function addIngred() {
-    const ingred = {
-        "name": modalNameField.value.trim(),
-        "quantity": modalQuantField.value.trim(),
-        "unit": modalUnitField.value.trim(),
-    };
+    // storing the input fields' value after trimming
+    const name = modalNameField.value.trim();
+    const quantity = modalQuantField.value.trim();
+    const unit = modalUnitField.value.trim();
 
+    if (name && quantity && unit) {
+        // create an object to save the data
+        const ingred = {
+            "name": name,
+            "quantity": quantity,
+            "unit": unit,
+        };
 
-    ingredientsData.push(ingred)
-    localStorage.setItem("ingredients", JSON.stringify(ingredientsData));
-    modalNameField.value = "";
-    modalQuantField.value = 0;
-    modalUnitField.value = "";
+        // retrieve the current local storage data
+        ingredientsData = JSON.parse(localStorage.getItem("ingredients")) || [];
+
+        // add the object to the array
+        ingredientsData.push(ingred);
+
+        // save to the local storage again
+        localStorage.setItem("ingredients", JSON.stringify(ingredientsData));
+
+        // clean the UI fields
+        modalNameField.value = "";
+        modalQuantField.value = 0;
+        modalUnitField.value = "";
+    }
+    // display the error message
+    else {
+        errMsg.style.display = "block";
+    }
+
 }
 
 // Events
