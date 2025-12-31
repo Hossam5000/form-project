@@ -20,7 +20,11 @@ body {
 
 /* classes */
 .container {
-    position: relative;
+    /*     position: relative; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     width: 90%;
     max-width: 380px;
     margin: 3rem auto 0;
@@ -116,6 +120,17 @@ body {
 }
 
 /* sections */
+.container .title-1 {
+    margin-bottom: 1.6rem;
+}
+
+.container .ingreds {
+    min-height: 465px;
+    padding: 1.6rem 0.5rem;
+    border: 1px solid #000;
+
+}
+
 .container .buttons {
     width: 100%;
 }
@@ -144,11 +159,6 @@ body {
 
     .container .ingreds .ingred span[class^="ingred"] {
         font-size: 1.6rem;
-    }
-
-    .container .buttons {
-        position: absolute;
-        bottom: 0;
     }
 
     .container .buttons .addBtn {
