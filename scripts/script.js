@@ -1,3 +1,6 @@
+// imports
+import { errMsg } from "overlay.js"
+
 // cons & vars
 // >> overlay
 const overlay = document.querySelector(".overlay");
